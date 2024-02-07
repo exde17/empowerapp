@@ -272,31 +272,6 @@ class _LoginState extends State<Login> {
                           padding: const EdgeInsets.all(14), // Tamaño del botón
                         ),
                       ),
-
-                      // ElevatedButton.icon(
-                      //   icon: const Icon(
-                      //     FontAwesomeIcons.facebookF, // Ícono de Facebook
-                      //     color: Colors.white,
-                      //     size:
-                      //         35, // Ajusta el tamaño del ícono según necesites
-                      //   ),
-                      //   label: const Text(''),
-                      //   onPressed: () {
-                      //     // Acción para iniciar sesión con Facebook
-                      //   },
-                      //   style: ElevatedButton.styleFrom(
-                      //     backgroundColor: const Color.fromARGB(
-                      //         255, 7, 67, 187), // Color de fondo de Facebook
-                      //     fixedSize:
-                      //         const Size(56, 56), // Tamaño del botón (cuadrado)
-                      //     shape: RoundedRectangleBorder(
-                      //       borderRadius: BorderRadius.circular(
-                      //           16), // Esquinas redondeadas modernas
-                      //     ),
-                      //     padding: const EdgeInsets.all(
-                      //         0), // Sin padding para que el ícono se centre
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
