@@ -1,4 +1,6 @@
+import 'package:empower_app/src/screens/registro.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -137,7 +139,7 @@ class _LoginState extends State<Login> {
                     ),
                     onChanged: (value) => {}),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 80),
 
               // Botón de login///////////////////////////////////////////////
               ElevatedButton(
@@ -162,7 +164,12 @@ class _LoginState extends State<Login> {
               // Texto Registrarme/////////////////////////////////////////////7
               TextButton(
                 onPressed: () {
-                  // Acción de "¿No tienes cuenta? Registrate"
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const Register()), // Navega a la pantalla de registro
+                  );
                 },
                 child: RichText(
                   text: const TextSpan(
@@ -181,6 +188,115 @@ class _LoginState extends State<Login> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
+                    ],
+                  ),
+                ),
+              ),
+
+              const Text(
+                'o conectate con',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 50),
+
+              ////////////botones redes sociales/////////////////////////
+
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(
+                      8.0), // Ajusta el padding según necesites
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment
+                        .center, // Centra los botones en la fila
+                    children: [
+                      // Botón de Facebook
+                      ElevatedButton.icon(
+                        icon: const Icon(
+                          FontAwesomeIcons.facebookF, // Ícono de Facebook
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                        label: const Text(''),
+                        onPressed: () {
+                          // Lógica para iniciar sesión con Facebook
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                              255, 7, 67, 187), // Color de Facebook
+                          shape: const CircleBorder(), // Forma circular
+                          padding: const EdgeInsets.all(11), // Tamaño del botón
+                        ),
+                      ),
+                      const SizedBox(width: 40), // Espacio entre los botones
+
+                      // Botón de Google
+                      ElevatedButton.icon(
+                        icon: const Icon(
+                          FontAwesomeIcons.google, // Ícono de Google
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                        label: const Text(''),
+                        onPressed: () {
+                          // Lógica para iniciar sesión con Google
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                              255, 211, 26, 9), // Color de Google
+                          shape: const CircleBorder(), // Forma circular
+                          padding: const EdgeInsets.all(13), // Tamaño del botón
+                        ),
+                      ),
+                      const SizedBox(width: 40), // Espacio entre los botones
+
+                      // Botón de LinkedIn
+                      ElevatedButton.icon(
+                        icon: const Icon(
+                          FontAwesomeIcons.linkedin, // Ícono de LinkedIn
+                          color: Colors.white,
+                          size: 32,
+                        ),
+                        label: const Text(''),
+                        onPressed: () {
+                          // Lógica para iniciar sesión con LinkedIn
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                              255, 2, 141, 215), // Color de LinkedIn
+                          shape: const CircleBorder(), // Forma circular
+                          padding: const EdgeInsets.all(14), // Tamaño del botón
+                        ),
+                      ),
+
+                      // ElevatedButton.icon(
+                      //   icon: const Icon(
+                      //     FontAwesomeIcons.facebookF, // Ícono de Facebook
+                      //     color: Colors.white,
+                      //     size:
+                      //         35, // Ajusta el tamaño del ícono según necesites
+                      //   ),
+                      //   label: const Text(''),
+                      //   onPressed: () {
+                      //     // Acción para iniciar sesión con Facebook
+                      //   },
+                      //   style: ElevatedButton.styleFrom(
+                      //     backgroundColor: const Color.fromARGB(
+                      //         255, 7, 67, 187), // Color de fondo de Facebook
+                      //     fixedSize:
+                      //         const Size(56, 56), // Tamaño del botón (cuadrado)
+                      //     shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(
+                      //           16), // Esquinas redondeadas modernas
+                      //     ),
+                      //     padding: const EdgeInsets.all(
+                      //         0), // Sin padding para que el ícono se centre
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
