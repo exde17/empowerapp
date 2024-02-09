@@ -1,5 +1,13 @@
+import 'package:empower_app/rutes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+TextEditingController _passwordController = TextEditingController();
+TextEditingController _emailController = TextEditingController();
+TextEditingController _nameController = TextEditingController();
+TextEditingController _lastNameController = TextEditingController();
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -61,12 +69,23 @@ class Register extends StatelessWidget {
             // Campo de texto para el nombre
             Textt(
               labelText: 'Nombre',
+              controller: _nameController,
+              onChanged: (value) => {},
+            ),
+
+            const SizedBox(height: 20),
+
+            Textt(
+              labelText: 'Apellido',
+              controller: _lastNameController,
               onChanged: (value) => {},
             ),
 
             const SizedBox(height: 20), // Espacio entre los campos de texto
+
             Textt(
-              labelText: 'Apellido',
+              labelText: 'Email',
+              controller: _emailController,
               onChanged: (value) => {},
             ),
 
@@ -77,20 +96,21 @@ class Register extends StatelessWidget {
             // Campo de texto para la contraseña
             Textt(
               labelText: 'Contraseña',
-              onChanged: (value) => {},
-            ),
-
-            const SizedBox(height: 20),
-
-            Textt(
-              labelText: 'Confirmar Contraseña',
+              controller: _passwordController,
               onChanged: (value) => {},
             ),
 
             const SizedBox(height: 80),
             //boton de registro
             ElevatedButton(
-                onPressed: () => {},
+                onPressed: () => {
+                      register(
+                          _nameController.text,
+                          _lastNameController.text,
+                          _emailController.text,
+                          _passwordController.text,
+                          context)
+                    },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(150, 50),
                   shape: RoundedRectangleBorder(
@@ -193,11 +213,13 @@ class Register extends StatelessWidget {
 //WIDGET PARA LOS LabelText
 class Textt extends StatelessWidget {
   final String labelText;
+  final TextEditingController? controller;
   final void Function(String) onChanged;
   const Textt({
     super.key,
     required this.labelText,
     required this.onChanged,
+    this.controller,
   });
 
   @override
@@ -205,6 +227,7 @@ class Textt extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 70),
       child: TextField(
+        controller: controller,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           labelText: labelText,
@@ -215,6 +238,37 @@ class Textt extends StatelessWidget {
         ),
         onChanged: onChanged,
       ),
+    );
+  }
+}
+
+Future<void> register(String name, String apellido, String email,
+    String password, BuildContext context) async {
+  // Aquí puedes mostrar un indicador de progreso si lo deseas
+
+  final Uri url =
+      Uri.parse('https://render-school.onrender.com/api/auth/register');
+  final response = await http.post(
+    url,
+    headers: {'Content-Type': 'application/json'},
+    body: json.encode({
+      'firstName': name,
+      'lastName': apellido,
+      'password': password,
+      'email': email,
+    }),
+  );
+
+  // Aquí puedes ocultar el indicador de progreso si lo mostraste
+
+  if (response.statusCode == 200 || response.statusCode == 201) {
+    // Registro exitoso
+    Navigator.pushReplacementNamed(
+        context, Routes.home); // Navega a la pantalla de inicio
+  } else {
+    // Error al hacer registro
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error al hacer registro: ${response.body}')),
     );
   }
 }

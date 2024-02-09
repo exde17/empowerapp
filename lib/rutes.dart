@@ -1,3 +1,4 @@
+import 'package:empower_app/src/screens/empleate/empleate.dart';
 import 'package:flutter/material.dart';
 import 'package:empower_app/src/screens/home.dart';
 import 'package:empower_app/src/screens/registro.dart';
@@ -7,6 +8,7 @@ class Routes {
   static const String home = '/';
   static const String registro = '/registro';
   static const String login = '/login';
+  static const String empleate = '/empleate';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -16,6 +18,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const Register());
       case login:
         return MaterialPageRoute(builder: (_) => const Login());
+      case empleate:
+        return MaterialPageRoute(builder: (_) => const Empleate());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

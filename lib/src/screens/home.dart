@@ -1,4 +1,9 @@
+// import 'package:empower_app/main.dart';
+// import 'package:empower_app/rutes.dart';
 import 'package:empower_app/rutes.dart';
+// import 'package:empower_app/src/screens/empleate/empleate.dart';
+import 'package:empower_app/src/utils/bar.dart';
+import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -9,11 +14,15 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  int _selectedIndex = 0; // Ahora es parte de un StatefulWidget
+  int _selectedIndex = 0; // Estado para rastrear el ítem seleccionado
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
+      if (index == 1) {
+        Navigator.pushNamed(context, Routes.empleate);
+      }
     });
   }
 
@@ -21,62 +30,9 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     const SizedBox(height: 40);
     return Scaffold(
-      appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment
-                .center, // Centra los elementos dentro de la Row
-            children: [
-              const Text(
-                'EmpowerApp', // El título
-                style: TextStyle(
-                  fontSize: 38,
-                  fontWeight: FontWeight.bold, // Hace el texto más grueso
-                  color: Colors.grey, // Color gris oscuro
-                ),
-              ),
-              const SizedBox(width: 10), // Espacio entre el título y la imagen
-              Image.asset(
-                'lib/assets/logoEmpowerapp.png', // Asegúrate de que la ruta de tu imagen sea correcta
-                width: 50,
-                height: 50,
-              ),
-            ],
-          ),
-          centerTitle:
-              true, // Centra el Row, pero no sus contenidos internos individualmente
+      //el appBar
+      appBar: CustomAppBar.buildAppBar(context),
 
-          //boton de opciones
-          // leading: IconButton(
-          //   icon: const Icon(Icons.menu), // Ícono de menú
-          //   onPressed: () {
-          //     // Acción del botón
-          //   },
-          // ),
-          actions: <Widget>[
-            PopupMenuButton<String>(
-              onSelected: (String value) {
-                // Añade tu lógica aquí, basada en el valor seleccionado
-                // Por ejemplo:
-                if (value == 'perfil') {
-                  // Navega a la pantalla de perfil
-                } else if (value == 'cerrar_sesion') {
-                  Navigator.pushReplacementNamed(context, Routes.login);
-                }
-              },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                const PopupMenuItem<String>(
-                  value: 'perfil',
-                  child: Text('Perfil'),
-                ),
-                const PopupMenuItem<String>(
-                  value: 'cerrar_sesion',
-                  child: Text('Cerrar sesión'),
-                ),
-              ],
-              icon: const Icon(Icons.person,
-                  size: 44), // Puedes ajustar el tamaño aquí si es necesario
-            ),
-          ]),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -107,7 +63,7 @@ class HomeState extends State<Home> {
             Image.asset(
               'lib/assets/home.png', // Asegúrate de que la ruta de tu imagen sea correcta
               width: 500,
-              height: 570,
+              height: 500,
             ),
 
             const Spacer(),
@@ -115,19 +71,10 @@ class HomeState extends State<Home> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
-          BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Empleate'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.room_service), label: 'Servicios'),
-          // BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Tienda'),
-          // BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Muevete'),
-          // BottomNavigationBarItem(icon: Icon(Icons.gif), label: 'Donación'),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+
+      bottomNavigationBar: CustonBottomNavigation(
+        selectedIndex: _selectedIndex,
+        onItemTapped: _onItemTapped,
       ),
     );
   }

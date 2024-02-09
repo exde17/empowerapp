@@ -34,6 +34,9 @@ class _LoginState extends State<Login> {
     return Scaffold(
       // Barra superior /////////////////////////////////////////////////
       appBar: AppBar(
+        automaticallyImplyLeading:
+            false, // Esto deshabilita el botón de regreso automático
+        // el resto de tu AppBar aquí
         title: Row(
           mainAxisAlignment:
               MainAxisAlignment.center, // Centra los elementos dentro de la Row
