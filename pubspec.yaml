@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.13.3  
+  http: ^1.2.0  
   font_awesome_flutter: ^9.2.0
 
 
@@ -56,7 +56,8 @@ dev_dependencies:
 flutter:
   assets: 
     - lib\assets\logoEmpowerapp.png
-   
+    - lib\assets\home.png
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

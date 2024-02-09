@@ -59,42 +59,33 @@ class Register extends StatelessWidget {
             const Spacer(), // Espacio entre el botón y el formulario
 
             // Campo de texto para el nombre
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
-                child: Textt(
-                  labelText: 'Nombre',
-                  onChanged: (value) => {},
-                )), // Campo de texto para el nombre
+            Textt(
+              labelText: 'Nombre',
+              onChanged: (value) => {},
+            ),
 
             const SizedBox(height: 20), // Espacio entre los campos de texto
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
-                child: Textt(
-                  labelText: 'Correo electrónico',
-                  onChanged: (value) => {},
-                )),
+            Textt(
+              labelText: 'Apellido',
+              onChanged: (value) => {},
+            ),
 
             // Campo de texto para el correo electrónico
 
             const SizedBox(height: 20),
 
             // Campo de texto para la contraseña
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 70),
-              child: Textt(
-                labelText: 'Contraseña',
-                onChanged: (value) => {},
-              ),
+            Textt(
+              labelText: 'Contraseña',
+              onChanged: (value) => {},
             ),
 
             const SizedBox(height: 20),
 
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
-                child: Textt(
-                  labelText: 'Confirmar Contraseña',
-                  onChanged: (value) => {},
-                )),
+            Textt(
+              labelText: 'Confirmar Contraseña',
+              onChanged: (value) => {},
+            ),
 
             const SizedBox(height: 80),
             //boton de registro
@@ -116,6 +107,7 @@ class Register extends StatelessWidget {
 
             const SizedBox(height: 20),
 
+            //redes sociales
             Center(
                 child: Padding(
                     padding: const EdgeInsets.all(
@@ -210,14 +202,19 @@ class Textt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 70),
+      child: TextField(
+        keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           labelText: labelText,
           labelStyle: const TextStyle(
-            color: Colors.grey,
+            color: Color(0xFFBEBCBC),
             fontWeight: FontWeight.w700,
           ),
         ),
-        onChanged: onChanged);
+        onChanged: onChanged,
+      ),
+    );
   }
 }
