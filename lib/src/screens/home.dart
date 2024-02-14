@@ -23,6 +23,9 @@ class HomeState extends State<Home> {
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
       }
+      if (index == 2) {
+        Navigator.pushNamed(context, Routes.homeServices);
+      }
     });
   }
 

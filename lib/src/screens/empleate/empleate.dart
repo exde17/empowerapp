@@ -1,3 +1,5 @@
+import 'package:empower_app/rutes.dart';
+import 'package:empower_app/src/screens/empleate/hojaVida.dart';
 import 'package:empower_app/src/utils/bar.dart';
 import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,13 @@ class EmpleateState extends State<Empleate> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+
+      if (index == 0) {
+        Navigator.pushNamed(context, Routes.home);
+      }
+      if (index == 2) {
+        Navigator.pushNamed(context, Routes.homeServices);
+      }
     });
   }
 
@@ -76,7 +85,9 @@ class EmpleateState extends State<Empleate> {
               SizedBox(
                 width: 400,
                 child: ElevatedButton(
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.pushNamed(context, Routes.hojaVida),
+                  },
                   child: const Center(
                     child: Text(
                       'Registra tu Hoja de Vida',
