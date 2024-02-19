@@ -1,10 +1,12 @@
 import 'package:empower_app/src/screens/empleate/empleate.dart';
 import 'package:empower_app/src/screens/empleate/hojaVida.dart';
+import 'package:empower_app/src/screens/empleate/ofertasLaborales.dart';
 import 'package:empower_app/src/screens/empleate/promuevete.dart';
 import 'package:empower_app/src/screens/services/donation.dart';
 import 'package:empower_app/src/screens/services/homeServices.dart';
 import 'package:empower_app/src/screens/services/solicitaProducto.dart';
 import 'package:empower_app/src/screens/services/vende.dart';
+import 'package:empower_app/src/screens/empleate/visibilizate.dart';
 import 'package:flutter/material.dart';
 import 'package:empower_app/src/screens/home.dart';
 import 'package:empower_app/src/screens/registro.dart';
@@ -21,6 +23,8 @@ class Routes {
   static const String solicitaProducto = '/solicitaProducto';
   static const String vende = '/vende';
   static const String promuevete = '/promuevete';
+  static const String visibilizate = '/visibilizate';
+  static const String ofertasLaborales = '/ofertasLaborales';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -44,6 +48,10 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const Vende());
       case promuevete:
         return MaterialPageRoute(builder: (_) => const Promuevete());
+      case visibilizate:
+        return MaterialPageRoute(builder: (_) => const Visibilizate());
+      case ofertasLaborales:
+        return MaterialPageRoute(builder: (_) => const OfertasLaborales());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

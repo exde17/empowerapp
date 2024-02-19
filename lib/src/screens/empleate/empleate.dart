@@ -67,7 +67,7 @@ class EmpleateState extends State<Empleate> {
                   ),
                 ),
               ),
-              const SizedBox(height: 34),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Container(
                 width: 450,
                 padding: const EdgeInsets.all(16.0),
@@ -105,7 +105,9 @@ class EmpleateState extends State<Empleate> {
               SizedBox(
                 width: MediaQuery.of(context).size.height * 0.4,
                 child: ElevatedButton(
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.pushNamed(context, Routes.ofertasLaborales),
+                  },
                   child: Center(
                     child: Text(
                       'Ofertas Laborales',

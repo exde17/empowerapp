@@ -25,13 +25,13 @@ class CustomAppBar {
         ],
       ),
       centerTitle: true,
-      //     //boton de opciones
-      //     // leading: IconButton(
-      //     //   icon: const Icon(Icons.menu), // Ícono de menú
-      //     //   onPressed: () {
-      //     //     // Acción del botón
-      //     //   },
-      //     // ),
+      //boton de opciones
+      // leading: IconButton(
+      //   icon: const Icon(Icons.menu), // Ícono de menú
+      //   onPressed: () {
+      //     // Acción del botón
+      //   },
+      // ),
       actions: <Widget>[
         PopupMenuButton<String>(
           onSelected: (String value) {
