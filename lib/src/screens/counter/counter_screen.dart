@@ -147,8 +147,8 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             ElevatedButton(
-              child: Text('Login'),
               onPressed: _login,
+              child: const Text('Login'),
             ),
           ],
         ),

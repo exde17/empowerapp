@@ -55,12 +55,12 @@ class HomeServicesState extends State<HomeServices> {
             width: double.infinity,
             color: Colors.blue,
             padding: const EdgeInsets.all(16.0),
-            child: const Text(
+            child: Text(
               'SERVICIOS',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 34,
+                fontSize: MediaQuery.of(context).size.height * 0.04,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -79,7 +79,8 @@ class HomeServicesState extends State<HomeServices> {
               MenuItem(
                 icon: Icons.request_page,
                 text: 'Solicita productos',
-                onTap: () => Navigator.pushNamed(context, Routes.home),
+                onTap: () =>
+                    Navigator.pushNamed(context, Routes.solicitaProducto),
               ),
               MenuItem(
                 icon: Icons.shopping_cart,
@@ -89,7 +90,7 @@ class HomeServicesState extends State<HomeServices> {
               MenuItem(
                 icon: Icons.monetization_on,
                 text: 'Vende',
-                onTap: () => Navigator.pushNamed(context, Routes.home),
+                onTap: () => Navigator.pushNamed(context, Routes.vende),
               ),
             ],
           )),

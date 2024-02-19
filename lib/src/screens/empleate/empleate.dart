@@ -1,5 +1,4 @@
 import 'package:empower_app/rutes.dart';
-import 'package:empower_app/src/screens/empleate/hojaVida.dart';
 import 'package:empower_app/src/utils/bar.dart';
 import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
 import 'package:flutter/material.dart';
@@ -53,17 +52,17 @@ class EmpleateState extends State<Empleate> {
                   ),
                 ),
               ),
-              const SizedBox(height: 24),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Container(
                 width: double.infinity,
                 color: Colors.blue,
                 padding: const EdgeInsets.all(16.0),
-                child: const Text(
+                child: Text(
                   'EMPLÉATE',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 34,
+                    fontSize: MediaQuery.of(context).size.height * 0.04,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -72,42 +71,65 @@ class EmpleateState extends State<Empleate> {
               Container(
                 width: 450,
                 padding: const EdgeInsets.all(16.0),
-                child: const Text(
+                child: Text(
                   'Gracias por el registro de tu perfil, empresas y organizaciones sin ánimo de lucro podrán contactarse contigo para el acceso a un empleo remunerado. Te invitamos a llenar de manera adecuada tu perfil para que tus necesidades se ajusten a lo ofertado',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 24,
+                    fontSize: MediaQuery.of(context).size.height * 0.026,
                   ),
                   textAlign: TextAlign.justify,
                 ),
               ),
-              const SizedBox(height: 24),
               SizedBox(
-                width: 400,
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.height * 0.4,
                 child: ElevatedButton(
                   onPressed: () => {
                     Navigator.pushNamed(context, Routes.hojaVida),
                   },
-                  child: const Center(
+                  child: Center(
                     child: Text(
                       'Registra tu Hoja de Vida',
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: MediaQuery.of(context).size.height * 0.023,
                       ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 24),
               SizedBox(
-                width: 400,
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.height * 0.4,
                 child: ElevatedButton(
                   onPressed: () => {},
-                  child: const Center(
+                  child: Center(
                     child: Text(
                       'Ofertas Laborales',
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: MediaQuery.of(context).size.height * 0.023,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.height * 0.4,
+                child: ElevatedButton(
+                  onPressed: () => {
+                    Navigator.pushNamed(context, Routes.promuevete),
+                  },
+                  child: Center(
+                    child: Text(
+                      'Promuevéte',
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.023,
                       ),
                     ),
                   ),

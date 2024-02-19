@@ -2,16 +2,15 @@ import 'package:empower_app/rutes.dart';
 import 'package:empower_app/src/utils/bar.dart';
 import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
 
-class HojaVida extends StatefulWidget {
-  const HojaVida({Key? key}) : super(key: key);
+class Promuevete extends StatefulWidget {
+  const Promuevete({Key? key}) : super(key: key);
 
   @override
-  HojaVidaState createState() => HojaVidaState();
+  PromueveteState createState() => PromueveteState();
 }
 
-class HojaVidaState extends State<HojaVida> {
+class PromueveteState extends State<Promuevete> {
   int _selectedIndex = 0; // Estado para rastrear el ítem seleccionado
 
   void _onItemTapped(int index) {
@@ -21,40 +20,19 @@ class HojaVidaState extends State<HojaVida> {
       if (index == 0) {
         Navigator.pushNamed(context, Routes.home);
       }
-      if (index == 2) {
-        Navigator.pushNamed(context, Routes.homeServices);
+      if (index == 1) {
+        Navigator.pushNamed(context, Routes.empleate);
       }
     });
   }
-
-/////////////////////////////////////////////////////
-  String? fileName;
-
-  void pickFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles(
-      allowMultiple:
-          false, // Cambia a true si deseas seleccionar múltiples archivos
-    );
-
-    if (result != null) {
-      PlatformFile file = result.files.first;
-
-      setState(() {
-        fileName = file.name;
-      });
-      // Aquí puedes añadir más lógica, como subir el archivo a un servidor o almacenarlo localmente
-    } else {
-      // El usuario ha cancelado la selección de archivos
-    }
-  }
-////////////////////////////////////////////////////
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar.buildAppBar(context),
-        body: Center(
-            child: Column(mainAxisSize: MainAxisSize.max, children: [
+        body: SingleChildScrollView(
+            child: Center(
+                child: Column(mainAxisSize: MainAxisSize.max, children: [
           Align(
             alignment: Alignment.centerRight,
             child: Padding(
@@ -73,13 +51,15 @@ class HojaVidaState extends State<HojaVida> {
               ),
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.05,
+          ),
           Container(
             width: double.infinity,
             color: Colors.blue,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'HOJA DE VIDA',
+              'PROMUÉVETE',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -88,12 +68,12 @@ class HojaVidaState extends State<HojaVida> {
               ),
             ),
           ),
-          const SizedBox(height: 34),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           Container(
             width: 450,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Gracias al registro de tu hoja de vida podras iniciar con el proceso de postulaciones a las ofertas laborales que tenemos disponibles. Al cargarlo tu hoja de vida será enviada atomáticamente a la empresa que te postules.',
+              'En este espacio encontrarás servicios que le permitirá poner a la venta e intercambiar productos de apoyo a su alcance, así como la posibilidad de encontrar aquello que necesite para la realización de sus actividades y conformar redes de apoyo',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,
@@ -101,39 +81,18 @@ class HojaVidaState extends State<HojaVida> {
               textAlign: TextAlign.justify,
             ),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: const EdgeInsets.all(19.0),
-              child: ElevatedButton.icon(
-                onPressed:
-                    pickFile, // Invoca el método para seleccionar un archivo
-                icon: const Icon(Icons.file_upload), // Ícono para el botón
-                label: const Text("Cargar Hoja de Vida"), // Texto del botón
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(20), // Borde redondeado del botón
-                  ),
-                ),
-              ),
-            ),
-          ),
-          if (fileName != null) ...[
-            const SizedBox(height: 20),
-            Text(
-                "Archivo seleccionado: $fileName"), // Muestra el nombre del archivo seleccionado
-          ],
-          const SizedBox(height: 64),
           SizedBox(
-            width: 200,
+            height: MediaQuery.of(context).size.height * 0.05,
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.height * 0.2,
             child: ElevatedButton(
               onPressed: () => {
-                Navigator.pushNamed(context, Routes.home),
+                Navigator.pushNamed(context, Routes.homeServices),
               },
               child: Center(
                 child: Text(
-                  'Guardar',
+                  'Servicios',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.023,
                   ),
@@ -141,7 +100,7 @@ class HojaVidaState extends State<HojaVida> {
               ),
             ),
           ),
-        ])),
+        ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
           selectedIndex: _selectedIndex,

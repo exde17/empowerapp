@@ -1,7 +1,10 @@
 import 'package:empower_app/src/screens/empleate/empleate.dart';
 import 'package:empower_app/src/screens/empleate/hojaVida.dart';
+import 'package:empower_app/src/screens/empleate/promuevete.dart';
 import 'package:empower_app/src/screens/services/donation.dart';
 import 'package:empower_app/src/screens/services/homeServices.dart';
+import 'package:empower_app/src/screens/services/solicitaProducto.dart';
+import 'package:empower_app/src/screens/services/vende.dart';
 import 'package:flutter/material.dart';
 import 'package:empower_app/src/screens/home.dart';
 import 'package:empower_app/src/screens/registro.dart';
@@ -15,6 +18,9 @@ class Routes {
   static const String hojaVida = '/hojaVida';
   static const String homeServices = '/homeServices';
   static const String donation = '/donation';
+  static const String solicitaProducto = '/solicitaProducto';
+  static const String vende = '/vende';
+  static const String promuevete = '/promuevete';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -32,6 +38,12 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const HomeServices());
       case donation:
         return MaterialPageRoute(builder: (_) => const Donation());
+      case solicitaProducto:
+        return MaterialPageRoute(builder: (_) => const SolicitaProducto());
+      case vende:
+        return MaterialPageRoute(builder: (_) => const Vende());
+      case promuevete:
+        return MaterialPageRoute(builder: (_) => const Promuevete());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

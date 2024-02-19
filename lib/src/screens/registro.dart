@@ -73,7 +73,9 @@ class Register extends StatelessWidget {
               onChanged: (value) => {},
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.02,
+            ),
 
             Textt(
               labelText: 'Apellido',
@@ -81,7 +83,9 @@ class Register extends StatelessWidget {
               onChanged: (value) => {},
             ),
 
-            const SizedBox(height: 20), // Espacio entre los campos de texto
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.02,
+            ), // Espacio entre los campos de texto
 
             Textt(
               labelText: 'Email',
@@ -91,7 +95,9 @@ class Register extends StatelessWidget {
 
             // Campo de texto para el correo electrónico
 
-            const SizedBox(height: 20),
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.02,
+            ),
 
             // Campo de texto para la contraseña
             Textt(
@@ -100,7 +106,9 @@ class Register extends StatelessWidget {
               onChanged: (value) => {},
             ),
 
-            const SizedBox(height: 80),
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.2,
+            ),
             //boton de registro
             ElevatedButton(
                 onPressed: () => {
@@ -117,15 +125,17 @@ class Register extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   'Registrarse',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: MediaQuery.of(context).size.width * 0.045,
                     fontWeight: FontWeight.bold,
                   ),
                 )),
 
-            const SizedBox(height: 20),
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.03,
+            ),
 
             //redes sociales
             Center(
@@ -225,7 +235,9 @@ class Textt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 70),
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.05,
+      ),
       child: TextField(
         controller: controller,
         keyboardType: TextInputType.emailAddress,
@@ -246,8 +258,8 @@ Future<void> register(String name, String apellido, String email,
     String password, BuildContext context) async {
   // Aquí puedes mostrar un indicador de progreso si lo deseas
 
-  final Uri url =
-      Uri.parse('https://render-school.onrender.com/api/auth/register');
+  final Uri url = Uri.parse(
+      'https://devempowerapp.gatewayit.co/empowerapp/api/auth/register');
   final response = await http.post(
     url,
     headers: {'Content-Type': 'application/json'},
@@ -263,12 +275,21 @@ Future<void> register(String name, String apellido, String email,
 
   if (response.statusCode == 200 || response.statusCode == 201) {
     // Registro exitoso
+    // ignore: use_build_context_synchronously
     Navigator.pushReplacementNamed(
-        context, Routes.home); // Navega a la pantalla de inicio
+        context, Routes.login); // Navega a la pantalla de inicio
   } else {
     // Error al hacer registro
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Error al hacer registro: ${response.body}')),
     );
+
+    //   void _showSnackBar(BuildContext context) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(
+    //       content: Text('This is a SnackBar!'),
+    //     ),
+    //   );
+    // }
   }
 }

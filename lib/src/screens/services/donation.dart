@@ -50,55 +50,64 @@ class DonationState extends State<Donation> {
               ),
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.04,
+          ),
           Container(
             width: double.infinity,
             color: Colors.blue,
             padding: const EdgeInsets.all(16.0),
-            child: const Text(
+            child: Text(
               'DONACIONES',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 34,
+                fontSize: MediaQuery.of(context).size.height * 0.04,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const SizedBox(height: 34),
-          const Center(
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.04,
+          ),
+          Center(
             child: Text(
               '!Has una Diferencia!',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: MediaQuery.of(context).size.height * 0.035,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Protest Revolution',
+                // fontFamily: 'ProtestRevolution',
                 // fontStyle: FontStyle.italic
               ),
               textAlign: TextAlign.justify,
             ),
           ),
-          const SizedBox(height: 34),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.04,
+          ),
           Container(
             width: 450,
             padding: const EdgeInsets.all(16.0),
-            child: const Text(
+            child: Text(
               'Tu generocidad ayuda a poyar nuestras iniciativas.',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: MediaQuery.of(context).size.height * 0.026,
               ),
               textAlign: TextAlign.justify,
             ),
           ),
-          const SizedBox(height: 34),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.04,
+          ),
+          // ignore: avoid_unnecessary_containers
           Container(
-            child: const Text(
+            child: Text(
               '!Gracias por tu Donación!',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: MediaQuery.of(context).size.height * 0.026,
                 fontWeight: FontWeight.bold,
                 // fontStyle: FontStyle.italic
               ),
@@ -106,13 +115,16 @@ class DonationState extends State<Donation> {
             ),
           ),
 
-          const SizedBox(height: 54),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.06,
+          ),
           ////////////////////////////////////////////
           Row(
             //centrar los elementos
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
+              Flexible(
+                  child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -123,22 +135,35 @@ class DonationState extends State<Donation> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
                     ),
-                    fixedSize: const Size(210, 130),
+                    // Usamos MediaQuery para hacer el tamaño de los botones responsive
+                    minimumSize: Size(
+                        MediaQuery.of(context).size.width *
+                            0.4, // Ancho mínimo del botón
+                        MediaQuery.of(context).size.height *
+                            0.12), // Altura mínima del botón
                   ),
                   onPressed: () {
                     // Your code here
                   },
-                  child: const Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      // horizontal: 32.0, vertical: 16.0
+                      horizontal: MediaQuery.of(context).size.width *
+                          0.08, // Aproximadamente 8% del ancho de la pantalla
+                      vertical: MediaQuery.of(context).size.height *
+                          0.02, // Aproximadamente 2% de la altura de la pantalla
+                    ),
                     child: Text(
                       'Monetaria',
-                      style: TextStyle(fontSize: 21),
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.018,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
+              )),
+              Flexible(
+                  child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -149,21 +174,31 @@ class DonationState extends State<Donation> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
                     ),
-                    fixedSize: const Size(210, 130),
+                    // Usamos MediaQuery para hacer el tamaño de los botones responsive
+                    minimumSize: Size(
+                        MediaQuery.of(context).size.width *
+                            0.4, // Ancho mínimo del botón
+                        MediaQuery.of(context).size.height *
+                            0.12), // Altura mínima del botón
                   ),
                   onPressed: () {
                     // Your code here
                   },
-                  child: const Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width *
+                          0.08, // Aproximadamente 8% del ancho de la pantalla
+                      vertical: MediaQuery.of(context).size.height * 0.02,
+                    ),
                     child: Text(
                       'Producto',
-                      style: TextStyle(fontSize: 21),
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.018,
+                      ),
                     ),
                   ),
                 ),
-              ),
+              )),
             ],
           ),
         ])),

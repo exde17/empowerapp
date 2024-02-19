@@ -62,26 +62,10 @@ class _LoginState extends State<Login> {
         ),
         centerTitle:
             true, // Centra el Row, pero no sus contenidos internos individualmente
-
-        //boton de opciones
-        // actions: [
-        //   IconButton(
-        //     onPressed: () {
-        //       // Acción del botón
-        //     },
-        //     icon: const Icon(Icons.menu), // Ícono de menú
-        //   )
-        // ]
       ),
 
       // Cuerpo de la pantalla /////////////////////////////////////////////
-      body:
-          // Stack(
-          // children: [
-          //   Center(
-          //     child: SingleChildScrollView(
-          Center(
-        // _isLoading ? Center(child: CircularProgressIndicator()) : buildLoginForm(),
+      body: Center(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
@@ -111,7 +95,9 @@ class _LoginState extends State<Login> {
             // Email////////////////////////////////////////////////////
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 70),
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05,
+              ),
               child: TextField(
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
@@ -133,7 +119,9 @@ class _LoginState extends State<Login> {
 
             // Contraseña///////////////////////////////////////////////
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 70),
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05,
+              ),
               child: TextField(
                   controller: _passwordController,
                   keyboardType: TextInputType.visiblePassword,
@@ -177,14 +165,16 @@ class _LoginState extends State<Login> {
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              child: const Text(
+              child: Text(
                 'Login',
                 style: TextStyle(
-                  fontSize: 20, // Ajusta este valor al tamaño que prefieras
+                  fontSize: MediaQuery.of(context).size.height * 0.023,
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.01,
+            ),
 
             // Texto Registrarme/////////////////////////////////////////////7
             TextButton(
@@ -218,16 +208,16 @@ class _LoginState extends State<Login> {
               ),
             ),
 
-            const Text(
+            Text(
               'o conectate con',
               style: TextStyle(
                 color: Colors.grey,
-                fontSize: 24,
+                fontSize: MediaQuery.of(context).size.width * 0.065,
                 fontWeight: FontWeight.bold,
               ),
             ),
 
-            const SizedBox(height: 50),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.07),
 
             ////////////botones redes sociales/////////////////////////
 
@@ -316,8 +306,8 @@ class _LoginState extends State<Login> {
       _isLoading = true; // Inicia el indicador de progreso
     });
 
-    final Uri url =
-        Uri.parse('https://render-school.onrender.com/api/auth/login');
+    final Uri url = Uri.parse(
+        'https://devempowerapp.gatewayit.co/empowerapp/api/auth/login');
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},
