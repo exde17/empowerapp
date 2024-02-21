@@ -30,7 +30,8 @@ class EmpleateState extends State<Empleate> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar.buildAppBar(context),
-        body: Center(
+        body: SingleChildScrollView(
+            child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -139,7 +140,7 @@ class EmpleateState extends State<Empleate> {
               ),
             ],
           ),
-        ),
+        )),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
           selectedIndex: _selectedIndex,

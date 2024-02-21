@@ -77,7 +77,7 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
               width: MediaQuery.of(context).size.height * 0.2,
               child: ElevatedButton(
                 onPressed: () => {
-                  Navigator.pushNamed(context, Routes.hojaVida),
+                  Navigator.pushNamed(context, Routes.visibilizate),
                 },
                 child: Center(
                   child: Text(

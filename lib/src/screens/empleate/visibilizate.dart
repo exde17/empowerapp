@@ -92,7 +92,7 @@ class VisibilizateState extends State<Visibilizate> {
           Botoness(
             text2: 'Caracterización',
             onPressed: () {
-              Navigator.pushNamed(context, Routes.empleate);
+              Navigator.pushNamed(context, Routes.caracterizacion);
             },
           ),
           SizedBox(
@@ -101,7 +101,7 @@ class VisibilizateState extends State<Visibilizate> {
           Botoness(
             text2: 'Certifícate',
             onPressed: () {
-              Navigator.pushNamed(context, Routes.empleate);
+              Navigator.pushNamed(context, Routes.certificate);
             },
           ),
           SizedBox(
@@ -110,7 +110,7 @@ class VisibilizateState extends State<Visibilizate> {
           Botoness(
             text2: 'Politicas Publicas',
             onPressed: () {
-              Navigator.pushNamed(context, Routes.empleate);
+              Navigator.pushNamed(context, Routes.politicasPublicas);
             },
           ),
         ]))),
