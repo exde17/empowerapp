@@ -21,6 +21,9 @@ class HojaVidaState extends State<HojaVida> {
       if (index == 0) {
         Navigator.pushNamed(context, Routes.home);
       }
+      if (index == 1) {
+        Navigator.pushNamed(context, Routes.empleate);
+      }
       if (index == 2) {
         Navigator.pushNamed(context, Routes.homeServices);
       }
@@ -53,8 +56,9 @@ class HojaVidaState extends State<HojaVida> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar.buildAppBar(context),
-        body: Center(
-            child: Column(mainAxisSize: MainAxisSize.max, children: [
+        body: SingleChildScrollView(
+            child: Center(
+                child: Column(mainAxisSize: MainAxisSize.max, children: [
           Align(
             alignment: Alignment.centerRight,
             child: Padding(
@@ -88,9 +92,11 @@ class HojaVidaState extends State<HojaVida> {
               ),
             ),
           ),
-          const SizedBox(height: 34),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.05,
+          ),
           Container(
-            width: 450,
+            width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Gracias al registro de tu hoja de vida podras iniciar con el proceso de postulaciones a las ofertas laborales que tenemos disponibles. Al cargarlo tu hoja de vida será enviada atomáticamente a la empresa que te postules.',
@@ -141,7 +147,7 @@ class HojaVidaState extends State<HojaVida> {
               ),
             ),
           ),
-        ])),
+        ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
           selectedIndex: _selectedIndex,

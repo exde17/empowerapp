@@ -3,14 +3,14 @@ import 'package:empower_app/src/utils/bar.dart';
 import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
 import 'package:flutter/material.dart';
 
-class HomeServices extends StatefulWidget {
-  const HomeServices({Key? key}) : super(key: key);
+class OtrosService extends StatefulWidget {
+  const OtrosService({Key? key}) : super(key: key);
 
   @override
-  HomeServicesState createState() => HomeServicesState();
+  OtrosServiceState createState() => OtrosServiceState();
 }
 
-class HomeServicesState extends State<HomeServices> {
+class OtrosServiceState extends State<OtrosService> {
   int _selectedIndex = 0; // Estado para rastrear el ítem seleccionado
 
   void _onItemTapped(int index) {
@@ -22,6 +22,9 @@ class HomeServicesState extends State<HomeServices> {
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
+      }
+      if (index == 2) {
+        Navigator.pushNamed(context, Routes.homeServices);
       }
     });
   }
@@ -56,7 +59,7 @@ class HomeServicesState extends State<HomeServices> {
             color: Colors.blue,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'SERVICIOS',
+              'OTROS SERVICIOS',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -66,7 +69,7 @@ class HomeServicesState extends State<HomeServices> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
+            height: MediaQuery.of(context).size.height * 0.07,
           ),
           Expanded(
               child: GridView.count(
@@ -75,36 +78,32 @@ class HomeServicesState extends State<HomeServices> {
             crossAxisCount: 2,
             children: <Widget>[
               MenuItem(
-                icon: Icons.favorite,
-                text: 'Donaciones',
-                onTap: () => Navigator.pushNamed(context, Routes.donation),
+                icon: Icons.account_balance_sharp,
+                text: 'Denuncia',
+                onTap: () => Navigator.pushNamed(context, Routes.denuncia),
               ),
               MenuItem(
-                icon: Icons.request_page,
-                text: 'Solicita productos',
+                icon: Icons.emoji_transportation_rounded,
+                text: 'Transporte',
                 onTap: () =>
                     Navigator.pushNamed(context, Routes.solicitaProducto),
               ),
               MenuItem(
-                icon: Icons.shopping_cart,
-                text: 'Compra e intercambia',
-                onTap: () => Navigator.pushNamed(context, Routes.home),
+                icon: Icons.balance_rounded,
+                text: 'Leyes',
+                onTap: () => Navigator.pushNamed(context, Routes.leyes),
               ),
               MenuItem(
-                icon: Icons.monetization_on,
-                text: 'Vende',
-                onTap: () => Navigator.pushNamed(context, Routes.vende),
+                icon: Icons.route_sharp,
+                text: 'Rutas Accesibles',
+                onTap: () =>
+                    Navigator.pushNamed(context, Routes.rutasAccesibles),
               ),
-              MenuItem(
-                icon: Icons.room_service,
-                text: 'Otros servicios',
-                onTap: () => Navigator.pushNamed(context, Routes.otrosServices),
-              ),
-              MenuItem(
-                icon: Icons.mode_of_travel_sharp,
-                text: 'Muévete',
-                onTap: () => Navigator.pushNamed(context, Routes.muevete),
-              ),
+              // MenuItem(
+              //   icon: Icons.room_service,
+              //   text: 'Otros servicios',
+              //   onTap: () => Navigator.pushNamed(context, Routes.otrosServices),
+              // ),
             ],
           )),
         ])),
@@ -130,35 +129,41 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Paleta de colores
+    Color blueColor = Colors.blue.shade600;
+    Color greyColor = Colors.grey.shade200;
+    Color whiteColor = Colors.white;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue.shade300, Colors.blue.shade800],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(16),
+          color: greyColor, // Fondo principal gris claro
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.blue.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 4,
-              offset: const Offset(0, 2),
+              color: blueColor.withOpacity(0.5),
+              spreadRadius: 0,
+              blurRadius: 8,
+              offset: const Offset(4, 4),
             ),
           ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(icon, size: 70.0, color: Colors.white),
+            CircleAvatar(
+              backgroundColor: blueColor, // Círculo azul para el icono
+              radius: 35,
+              child: Icon(icon, size: 50.0, color: whiteColor),
+            ),
+            const SizedBox(height: 10),
             Text(
               text,
-              style: const TextStyle(
-                fontSize: 18.0,
-                color: Colors.white,
+              style: TextStyle(
+                fontSize: 16.0,
+                color: blueColor, // Texto en azul para contraste
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -183,21 +188,50 @@ class MenuItem extends StatelessWidget {
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return Card(
-//       margin: const EdgeInsets.all(8.0),
-//       child: InkWell(
-//         onTap: onTap,
-//         splashColor: Colors.blue.withAlpha(30),
-//         child: Center(
-//           child: Column(
-//             mainAxisSize: MainAxisSize.min,
-//             children: <Widget>[
-//               Icon(icon, size: 70.0),
-//               Text(text, style: const TextStyle(fontSize: 18.0)),
+//     return GestureDetector(
+//       onTap: onTap,
+//       child: Container(
+//         margin: const EdgeInsets.all(8.0),
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [
+//               Colors.blue.shade400, // Azul claro para un inicio vibrante
+//               Colors.grey.shade300, // Gris claro hacia el final para suavizar
 //             ],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
 //           ),
+//           borderRadius: BorderRadius.circular(16),
+//           boxShadow: [
+//             BoxShadow(
+//               color:
+//                   Colors.grey.withOpacity(0.5), // Sombra gris para complementar
+//               spreadRadius: 2,
+//               blurRadius: 4,
+//               offset: const Offset(0, 2),
+//             ),
+//           ],
+//         ),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Icon(icon,
+//                 size: 70.0,
+//                 color: Colors.white), // Icono en blanco para contraste
+//             Text(
+//               text,
+//               style: const TextStyle(
+//                 fontSize: 18.0,
+//                 color: Colors
+//                     .white, // Texto en blanco para mantener el contraste y la legibilidad
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//           ],
 //         ),
 //       ),
 //     );
 //   }
 // }
+
+

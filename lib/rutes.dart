@@ -5,8 +5,12 @@ import 'package:empower_app/src/screens/empleate/promuevete.dart';
 import 'package:empower_app/src/screens/otros/caracterizacion.dart';
 import 'package:empower_app/src/screens/otros/certificate.dart';
 import 'package:empower_app/src/screens/otros/politicasPublicas.dart';
+import 'package:empower_app/src/screens/services/denuncia.dart';
 import 'package:empower_app/src/screens/services/donation.dart';
 import 'package:empower_app/src/screens/services/homeServices.dart';
+import 'package:empower_app/src/screens/services/leyes.dart';
+import 'package:empower_app/src/screens/services/muevete.dart';
+import 'package:empower_app/src/screens/services/rutasAccesibles.dart';
 import 'package:empower_app/src/screens/services/solicitaProducto.dart';
 import 'package:empower_app/src/screens/services/vende.dart';
 import 'package:empower_app/src/screens/empleate/visibilizate.dart';
@@ -14,6 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:empower_app/src/screens/home.dart';
 import 'package:empower_app/src/screens/registro.dart';
 import 'package:empower_app/src/screens/login.dart';
+import 'package:empower_app/src/screens/services/OtrosServices.dart';
 
 class Routes {
   static const String home = '/';
@@ -31,6 +36,11 @@ class Routes {
   static const String caracterizacion = '/caracterizacion';
   static const String certificate = '/certificate';
   static const String politicasPublicas = '/politicasPublicas';
+  static const String otrosServices = '/OtrosServices';
+  static const String leyes = '/leyes';
+  static const String denuncia = '/denuncia';
+  static const String rutasAccesibles = '/rutasAccesibles';
+  static const String muevete = '/muevete';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -64,6 +74,16 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const Certificate());
       case politicasPublicas:
         return MaterialPageRoute(builder: (_) => const PoliticasPublicas());
+      case otrosServices:
+        return MaterialPageRoute(builder: (_) => const OtrosService());
+      case leyes:
+        return MaterialPageRoute(builder: (_) => const Leyes());
+      case denuncia:
+        return MaterialPageRoute(builder: (_) => const Denuncia());
+      case rutasAccesibles:
+        return MaterialPageRoute(builder: (_) => const RutasAccesibles());
+      case muevete:
+        return MaterialPageRoute(builder: (_) => const Muevete());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

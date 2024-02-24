@@ -39,6 +39,9 @@ class VendeState extends State<Vende> {
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
       }
+      if (index == 2) {
+        Navigator.pushNamed(context, Routes.homeServices);
+      }
     });
   }
 
@@ -68,8 +71,9 @@ class VendeState extends State<Vende> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar.buildAppBar(context),
-        body: Center(
-            child: Column(mainAxisSize: MainAxisSize.max, children: [
+        body: SingleChildScrollView(
+            child: Center(
+                child: Column(mainAxisSize: MainAxisSize.max, children: [
           Align(
             alignment: Alignment.centerRight,
             child: Padding(
@@ -175,7 +179,7 @@ class VendeState extends State<Vende> {
               )),
 
           const Spacer(), // Espacio entre el botón y el formulario
-        ])),
+        ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
           selectedIndex: _selectedIndex,

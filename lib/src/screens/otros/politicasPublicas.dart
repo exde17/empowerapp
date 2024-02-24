@@ -99,7 +99,7 @@ class PoliticasPublicasState extends State<PoliticasPublicas> {
           //   ),
           // ),
           Container(
-            width: 450,
+            width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: RichText(
               textAlign: TextAlign.justify,

@@ -90,7 +90,7 @@ class CaracterizacionState extends State<Caracterizacion> {
             height: MediaQuery.of(context).size.height * 0.05,
           ),
           Container(
-            width: 450,
+            width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'En nuestro compromiso continuo con la inclusión y la equidad, estamos llevando acabo un proceso de caracterización, para ser parte de ello, completa los siguientes campos:',

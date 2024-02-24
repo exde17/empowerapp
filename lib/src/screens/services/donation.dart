@@ -23,6 +23,9 @@ class DonationState extends State<Donation> {
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
       }
+      if (index == 2) {
+        Navigator.pushNamed(context, Routes.homeServices);
+      }
     });
   }
 

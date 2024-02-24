@@ -21,7 +21,7 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
         Navigator.pushNamed(context, Routes.home);
       }
       if (index == 1) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.empleate);
       }
       if (index == 2) {
         Navigator.pushNamed(context, Routes.homeServices);

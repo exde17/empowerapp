@@ -1,3 +1,5 @@
+// import 'dart:js';
+
 import 'package:empower_app/rutes.dart';
 import 'package:flutter/material.dart';
 
@@ -5,13 +7,14 @@ class CustomAppBar {
   static AppBar buildAppBar(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
+
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'EmpowerApp',
             style: TextStyle(
-              fontSize: 38,
+              fontSize: MediaQuery.of(context).size.width * 0.07,
               fontWeight: FontWeight.bold,
               color: Colors.grey,
             ),
@@ -19,8 +22,8 @@ class CustomAppBar {
           const SizedBox(width: 10),
           Image.asset(
             'lib/assets/logoEmpowerapp.png',
-            width: 50,
-            height: 50,
+            width: MediaQuery.of(context).size.width * 0.08,
+            height: MediaQuery.of(context).size.width * 0.08,
           ),
         ],
       ),
@@ -51,7 +54,8 @@ class CustomAppBar {
               child: Text('Cerrar sesión'),
             ),
           ],
-          icon: const Icon(Icons.person, size: 44),
+          icon: Icon(Icons.person,
+              size: MediaQuery.of(context).size.width * 0.08),
         ),
       ],
     );

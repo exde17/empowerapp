@@ -68,9 +68,9 @@ class EmpleateState extends State<Empleate> {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
               Container(
-                width: 450,
+                width: MediaQuery.of(context).size.width * 0.85,
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   'Gracias por el registro de tu perfil, empresas y organizaciones sin ánimo de lucro podrán contactarse contigo para el acceso a un empleo remunerado. Te invitamos a llenar de manera adecuada tu perfil para que tus necesidades se ajusten a lo ofertado',
@@ -82,7 +82,7 @@ class EmpleateState extends State<Empleate> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.05,
+                height: MediaQuery.of(context).size.height * 0.08,
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.height * 0.4,

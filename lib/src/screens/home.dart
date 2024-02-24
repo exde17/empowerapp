@@ -31,14 +31,14 @@ class HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(height: 40);
+    SizedBox(height: MediaQuery.of(context).size.height * 0.02);
     return Scaffold(
       //el appBar
       appBar: CustomAppBar.buildAppBar(context),
 
       body: Center(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          // mainAxisSize: MainAxisSize.max,
           children: [
             Align(
               alignment: Alignment.centerRight, // Alinea el botón a la derecha
@@ -61,15 +61,15 @@ class HomeState extends State<Home> {
               ),
             ),
 
-            const Spacer(),
+            // const Spacer(),
+            Expanded(
+                child: Image.asset(
+              'lib/assets/home2.webp', // Asegúrate de que la ruta de tu imagen sea correcta
+              width: MediaQuery.of(context).size.width * 23,
+              height: MediaQuery.of(context).size.height * 2,
+            )),
 
-            Image.asset(
-              'lib/assets/home.png', // Asegúrate de que la ruta de tu imagen sea correcta
-              width: 500,
-              height: 500,
-            ),
-
-            const Spacer(),
+            // const Spacer(),
             // Espacio entre el botón y el formulario
           ],
         ),

@@ -37,11 +37,15 @@ dependencies:
   path_provider: ^2.1.2
   url_launcher: ^6.2.4
   fluttertoast: ^8.2.4 
+  location: ^5.0.3
+  latlong2: ^0.9.0
+  google_maps_flutter: ^2.5.3
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_map: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +66,9 @@ flutter:
   assets: 
     - lib\assets\logoEmpowerapp.png
     - lib\assets\home.png
+    - lib\assets\home2.webp
+    - lib\assets\carrito.png
+    - lib\assets\mapita.png
 
 
   # The following line ensures that the Material Icons font is

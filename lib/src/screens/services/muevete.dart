@@ -3,20 +3,20 @@ import 'package:empower_app/src/utils/bar.dart';
 import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
 import 'package:flutter/material.dart';
 
-class Promuevete extends StatefulWidget {
-  const Promuevete({Key? key}) : super(key: key);
+class Muevete extends StatefulWidget {
+  const Muevete({Key? key}) : super(key: key);
 
   @override
-  PromueveteState createState() => PromueveteState();
+  MueveteState createState() => MueveteState();
 }
 
-class PromueveteState extends State<Promuevete> {
+class MueveteState extends State<Muevete> {
   int _selectedIndex = 0; // Estado para rastrear el ítem seleccionado
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
+
       if (index == 0) {
         Navigator.pushNamed(context, Routes.home);
       }
@@ -62,7 +62,7 @@ class PromueveteState extends State<Promuevete> {
             color: Colors.blue,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'PROMUÉVETE',
+              'MUÉVETE',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -71,12 +71,12 @@ class PromueveteState extends State<Promuevete> {
               ),
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
           Container(
             width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'En este espacio encontrarás servicios que le permitirá poner a la venta e intercambiar productos de apoyo a su alcance, así como la posibilidad de encontrar aquello que necesite para la realización de sus actividades y conformar redes de apoyo',
+              'Se busca redefinir la movilidad urbana con rutas accesibles, seguras brindando un servicio de calidad. \nAdemás, integra un sistema de denuncias en tiempo real para contribuir a un entorno más seguro y organizado.',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,
@@ -85,24 +85,23 @@ class PromueveteState extends State<Promuevete> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.height * 0.2,
-            child: ElevatedButton(
-              onPressed: () => {
-                Navigator.pushNamed(context, Routes.homeServices),
-              },
-              child: Center(
-                child: Text(
-                  'Servicios',
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.023,
-                  ),
-                ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'lib/assets/mapita.png', // Asegúrate de que la ruta de tu imagen sea correcta
+                width: MediaQuery.of(context).size.width * 0.2,
+                height: MediaQuery.of(context).size.height * 0.2,
               ),
-            ),
-          ),
+              Image.asset(
+                'lib/assets/carrito.png', // Asegúrate de que la ruta de tu imagen sea correcta
+                width: MediaQuery.of(context).size.width * 0.2,
+                height: MediaQuery.of(context).size.height * 0.2,
+              ),
+            ],
+          )
         ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
