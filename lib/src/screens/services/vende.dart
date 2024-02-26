@@ -92,7 +92,7 @@ class VendeState extends State<Vende> {
               ),
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Container(
             width: double.infinity,
             color: Colors.blue,
@@ -108,7 +108,7 @@ class VendeState extends State<Vende> {
             ),
           ),
           // const SizedBox(height: 74),
-          const Spacer(), // Espacio entre el botón y el formulario
+          // const Spacer(), // Espacio entre el botón y el formulario
           Align(
             alignment: Alignment.center,
             child: Padding(
@@ -127,7 +127,7 @@ class VendeState extends State<Vende> {
               ),
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           // Texto que muestra el nombre del archivo seleccionado
           Tfield(
             controller: _nproducto,
@@ -135,7 +135,7 @@ class VendeState extends State<Vende> {
             onChanged: (value) => {},
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           //cantidad
           TfieldNumber(
             controller: _cantidad,
@@ -143,7 +143,7 @@ class VendeState extends State<Vende> {
             onChanged: (value) => {},
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
           //precio
           TfieldNumber(
@@ -151,7 +151,7 @@ class VendeState extends State<Vende> {
             labelText: 'Precio',
             onChanged: (value) => {},
           ),
-          const SizedBox(height: 34),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
           Tfield(
             controller: _descripcion,
@@ -159,7 +159,7 @@ class VendeState extends State<Vende> {
             onChanged: (value) => {},
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
 
           //boton de registro
           ElevatedButton(
@@ -178,7 +178,7 @@ class VendeState extends State<Vende> {
                 ),
               )),
 
-          const Spacer(), // Espacio entre el botón y el formulario
+          // const Spacer(), // Espacio entre el botón y el formulario
         ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(

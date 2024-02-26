@@ -6,6 +6,8 @@ import 'package:empower_app/src/screens/otros/caracterizacion.dart';
 import 'package:empower_app/src/screens/otros/certificate.dart';
 import 'package:empower_app/src/screens/otros/politicasPublicas.dart';
 import 'package:empower_app/src/screens/services/denuncia.dart';
+import 'package:empower_app/src/screens/services/donacionMonetaria.dart';
+import 'package:empower_app/src/screens/services/donacionesProducto.dart';
 import 'package:empower_app/src/screens/services/donation.dart';
 import 'package:empower_app/src/screens/services/homeServices.dart';
 import 'package:empower_app/src/screens/services/leyes.dart';
@@ -41,6 +43,8 @@ class Routes {
   static const String denuncia = '/denuncia';
   static const String rutasAccesibles = '/rutasAccesibles';
   static const String muevete = '/muevete';
+  static const String donacionesPoducto = '/DonacionesPoducto';
+  static const String donacionesMonetaria = '/DonacionesMonetaria';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -84,6 +88,10 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const RutasAccesibles());
       case muevete:
         return MaterialPageRoute(builder: (_) => const Muevete());
+      case donacionesPoducto:
+        return MaterialPageRoute(builder: (_) => const DonacionesProducto());
+      case donacionesMonetaria:
+        return MaterialPageRoute(builder: (_) => const DonacionesMonetaria());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

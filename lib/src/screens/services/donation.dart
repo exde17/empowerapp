@@ -146,7 +146,7 @@ class DonationState extends State<Donation> {
                             0.12), // Altura mínima del botón
                   ),
                   onPressed: () {
-                    // Your code here
+                    Navigator.pushNamed(context, Routes.donacionesMonetaria);
                   },
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -185,7 +185,7 @@ class DonationState extends State<Donation> {
                             0.12), // Altura mínima del botón
                   ),
                   onPressed: () {
-                    // Your code here
+                    Navigator.pushNamed(context, Routes.donacionesPoducto);
                   },
                   child: Padding(
                     padding: EdgeInsets.symmetric(
