@@ -29,12 +29,13 @@ class CustomAppBar {
       ),
       centerTitle: true,
       //boton de opciones
-      // leading: IconButton(
-      //   icon: const Icon(Icons.menu), // Ícono de menú
-      //   onPressed: () {
-      //     // Acción del botón
-      //   },
-      // ),
+      leading: IconButton(
+        icon: Icon(Icons.home, size: MediaQuery.of(context).size.width * 0.08),
+        onPressed: () {
+          Navigator.pushNamed(context, Routes.home);
+        },
+      ),
+
       actions: <Widget>[
         PopupMenuButton<String>(
           onSelected: (String value) {

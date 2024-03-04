@@ -29,7 +29,7 @@ class LeyesState extends State<Leyes> {
     setState(() {
       _selectedIndex = index;
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -112,7 +112,7 @@ class LeyesState extends State<Leyes> {
         ),
       ),
       bottomNavigationBar: CustonBottomNavigation(
-        selectedIndex: _selectedIndex,
+        // selectedIndex: _selectedIndex,
         onItemTapped: _onItemTapped,
       ),
     );

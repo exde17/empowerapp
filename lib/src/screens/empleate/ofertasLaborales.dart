@@ -18,7 +18,7 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -71,25 +71,25 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.height * 0.2,
-              child: ElevatedButton(
-                onPressed: () => {
-                  Navigator.pushNamed(context, Routes.visibilizate),
-                },
-                child: Center(
-                  child: Text(
-                    'Visibilizate',
-                    style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height * 0.023,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Align(
+          //   alignment: Alignment.centerRight,
+          //   child: SizedBox(
+          //     width: MediaQuery.of(context).size.height * 0.2,
+          //     child: ElevatedButton(
+          //       onPressed: () => {
+          //         Navigator.pushNamed(context, Routes.visibilizate),
+          //       },
+          //       child: Center(
+          //         child: Text(
+          //           'Visibilizate',
+          //           style: TextStyle(
+          //             fontSize: MediaQuery.of(context).size.height * 0.023,
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.05),
           Container(
             width: 450,
@@ -142,7 +142,7 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
         ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }

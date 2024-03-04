@@ -18,7 +18,7 @@ class HomeServicesState extends State<HomeServices> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -110,7 +110,7 @@ class HomeServicesState extends State<HomeServices> {
         ])),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }

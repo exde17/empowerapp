@@ -18,7 +18,7 @@ class EmpleateState extends State<Empleate> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 2) {
         Navigator.pushNamed(context, Routes.homeServices);
@@ -119,31 +119,31 @@ class EmpleateState extends State<Empleate> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.height * 0.4,
-                child: ElevatedButton(
-                  onPressed: () => {
-                    Navigator.pushNamed(context, Routes.promuevete),
-                  },
-                  child: Center(
-                    child: Text(
-                      'Promuevéte',
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height * 0.023,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height * 0.01,
+              // ),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.height * 0.4,
+              //   child: ElevatedButton(
+              //     onPressed: () => {
+              //       Navigator.pushNamed(context, Routes.promuevete),
+              //     },
+              //     child: Center(
+              //       child: Text(
+              //         'Promuevéte',
+              //         style: TextStyle(
+              //           fontSize: MediaQuery.of(context).size.height * 0.023,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         )),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }

@@ -20,7 +20,7 @@ class DonacionesMonetariaState extends State<DonacionesMonetaria> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -133,7 +133,7 @@ class DonacionesMonetariaState extends State<DonacionesMonetaria> {
         ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }

@@ -98,7 +98,7 @@ class RutasAccesiblesState extends State<RutasAccesibles> {
     setState(() {
       _selectedIndex = index;
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -239,7 +239,7 @@ class RutasAccesiblesState extends State<RutasAccesibles> {
         ),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }

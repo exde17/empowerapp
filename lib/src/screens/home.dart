@@ -26,6 +26,9 @@ class HomeState extends State<Home> {
       if (index == 2) {
         Navigator.pushNamed(context, Routes.homeServices);
       }
+      if (index == 0) {
+        Navigator.pushNamed(context, Routes.visibilizate);
+      }
     });
   }
 
@@ -76,7 +79,7 @@ class HomeState extends State<Home> {
       ),
 
       bottomNavigationBar: CustonBottomNavigation(
-        selectedIndex: _selectedIndex,
+        // selectedIndex: _selectedIndex,
         onItemTapped: _onItemTapped,
       ),
     );

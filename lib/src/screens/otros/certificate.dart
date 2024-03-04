@@ -33,10 +33,10 @@ class CertificateState extends State<Certificate> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.empleate);
       }
       if (index == 2) {
         Navigator.pushNamed(context, Routes.homeServices);
@@ -172,7 +172,7 @@ class CertificateState extends State<Certificate> {
         ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }

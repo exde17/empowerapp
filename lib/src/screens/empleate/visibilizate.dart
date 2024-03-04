@@ -1,6 +1,7 @@
 import 'package:empower_app/rutes.dart';
 import 'package:empower_app/src/utils/bar.dart';
 import 'package:empower_app/src/utils/bottom_navigation.dart.dart';
+import 'package:empower_app/src/utils/toast.dart';
 import 'package:flutter/material.dart';
 
 class Visibilizate extends StatefulWidget {
@@ -18,7 +19,11 @@ class VisibilizateState extends State<Visibilizate> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.home);
+        showCustomToastWithIcon(
+          context,
+          'Ya estás en Visibilízate',
+        );
+        // Navigator.pushNamed(context, Routes.visibilizate);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -116,7 +121,7 @@ class VisibilizateState extends State<Visibilizate> {
         ]))),
         //bottoms navigations
         bottomNavigationBar: CustonBottomNavigation(
-          selectedIndex: _selectedIndex,
+          // selectedIndex: _selectedIndex,
           onItemTapped: _onItemTapped,
         ));
   }
