@@ -85,8 +85,7 @@ class OtrosServiceState extends State<OtrosService> {
               MenuItem(
                 icon: Icons.emoji_transportation_rounded,
                 text: 'Transporte',
-                onTap: () =>
-                    Navigator.pushNamed(context, Routes.solicitaProducto),
+                onTap: () => Navigator.pushNamed(context, Routes.transporte),
               ),
               MenuItem(
                 icon: Icons.balance_rounded,
