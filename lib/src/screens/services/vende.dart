@@ -34,7 +34,7 @@ class VendeState extends State<Vende> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);

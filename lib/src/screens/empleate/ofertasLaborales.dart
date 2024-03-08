@@ -18,7 +18,7 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -95,7 +95,7 @@ class OfertasLaboralesState extends State<OfertasLaborales> {
             width: 450,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Selecciona una Opcion:',
+              'Selecciona una Opción:',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

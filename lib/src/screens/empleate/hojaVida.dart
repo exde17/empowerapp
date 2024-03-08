@@ -19,7 +19,7 @@ class HojaVidaState extends State<HojaVida> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -99,7 +99,7 @@ class HojaVidaState extends State<HojaVida> {
             width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Gracias al registro de tu hoja de vida podras iniciar con el proceso de postulaciones a las ofertas laborales que tenemos disponibles. Al cargarlo tu hoja de vida será enviada atomáticamente a la empresa que te postules.',
+              'Gracias al registro de tu hoja de vida podrás iniciar con el proceso de postulaciones a las ofertas laborales que tenemos disponibles. Al cargarlo tu hoja de vida será enviada automáticamente a la empresa que te postules.',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

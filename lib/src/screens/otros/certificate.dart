@@ -33,7 +33,7 @@ class CertificateState extends State<Certificate> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -93,7 +93,7 @@ class CertificateState extends State<Certificate> {
             width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              '¿Necesitas un certificado de discapacidad? Dejanos tus datos y te ayudaremos a obtenerlo.',
+              '¿Necesitas un certificado de discapacidad? Déjanos tus datos y nos pondremos en contacto contigo.',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

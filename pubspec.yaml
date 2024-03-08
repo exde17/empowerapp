@@ -70,6 +70,10 @@ flutter:
     - lib\assets\carrito.png
     - lib\assets\mapita.png
     - lib\assets\donacion.png
+    - lib\assets\denuciasin.png
+    - lib\assets\babaria.png
+    - lib\assets\cocacola.png
+    - lib\assets\universidad.png
 
 
   # The following line ensures that the Material Icons font is

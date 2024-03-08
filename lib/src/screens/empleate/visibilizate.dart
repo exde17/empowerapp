@@ -19,11 +19,11 @@ class VisibilizateState extends State<Visibilizate> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        showCustomToastWithIcon(
-          context,
-          'Ya estás en Visibilízate',
-        );
-        // Navigator.pushNamed(context, Routes.visibilizate);
+        // showCustomToastWithIcon(
+        //   context,
+        //   'Ya estás en Visibilízate',
+        // );
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -83,7 +83,7 @@ class VisibilizateState extends State<Visibilizate> {
             width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Con el fin de visibilazarte dentro dentro de la sociedad, ofreceremos los siguites servicios para ti: ',
+              'Con el fin de visibilizarte dentro de la sociedad, ofreceremos los siguites servicios para ti: ',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

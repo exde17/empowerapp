@@ -18,7 +18,7 @@ class HomeServicesState extends State<HomeServices> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -95,16 +95,16 @@ class HomeServicesState extends State<HomeServices> {
                 text: 'Vende',
                 onTap: () => Navigator.pushNamed(context, Routes.vende),
               ),
-              MenuItem(
-                icon: Icons.room_service,
-                text: 'Otros servicios',
-                onTap: () => Navigator.pushNamed(context, Routes.otrosServices),
-              ),
-              MenuItem(
-                icon: Icons.mode_of_travel_sharp,
-                text: 'Muévete',
-                onTap: () => Navigator.pushNamed(context, Routes.muevete),
-              ),
+              // MenuItem(
+              //   icon: Icons.room_service,
+              //   text: 'Otros servicios',
+              //   onTap: () => Navigator.pushNamed(context, Routes.otrosServices),
+              // ),
+              // MenuItem(
+              //   icon: Icons.mode_of_travel_sharp,
+              //   text: 'Muévete',
+              //   onTap: () => Navigator.pushNamed(context, Routes.muevete),
+              // ),
             ],
           )),
         ])),

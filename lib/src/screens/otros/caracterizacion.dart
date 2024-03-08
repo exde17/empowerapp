@@ -33,7 +33,7 @@ class CaracterizacionState extends State<Caracterizacion> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -93,7 +93,7 @@ class CaracterizacionState extends State<Caracterizacion> {
             width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'En nuestro compromiso continuo con la inclusión y la equidad, estamos llevando acabo un proceso de caracterización, para ser parte de ello, completa los siguientes campos:',
+              'En nuestro compromiso continuo con la inclusión y la equidad, estamos llevando a cabo un proceso de caracterización, para ser parte de ello, completa los siguientes campos:',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

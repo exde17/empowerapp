@@ -18,7 +18,7 @@ class DonationState extends State<Donation> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -75,7 +75,7 @@ class DonationState extends State<Donation> {
           ),
           Center(
             child: Text(
-              '!Has una Diferencia!',
+              '! Has una Diferencia!',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.035,
@@ -93,7 +93,7 @@ class DonationState extends State<Donation> {
             width: 450,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Tu generocidad ayuda a poyar nuestras iniciativas.',
+              'Tu generosidad ayuda a poyar nuestras iniciativas.',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

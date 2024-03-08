@@ -15,7 +15,8 @@ class PoliticasPublicas extends StatefulWidget {
 
 class PoliticasPublicasState extends State<PoliticasPublicas> {
   void _launchURL() async {
-    showCustomToastWithIcon(context, 'Esta funcion esta en construccion');
+    Navigator.pushNamed(context, Routes.leyes);
+    // showCustomToastWithIcon(context, 'Esta funcion esta en construccion');
     // showCustomToast('esta en veremos jejeeje');
     // final Uri url = Uri.parse('https://www.google.com');
     // await canLaunchUrl(url)
@@ -30,7 +31,7 @@ class PoliticasPublicasState extends State<PoliticasPublicas> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);

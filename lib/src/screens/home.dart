@@ -27,7 +27,7 @@ class HomeState extends State<Home> {
         Navigator.pushNamed(context, Routes.homeServices);
       }
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
     });
   }

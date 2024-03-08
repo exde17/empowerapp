@@ -86,7 +86,7 @@ class TransporteState extends State<Transporte> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -159,7 +159,7 @@ class TransporteState extends State<Transporte> {
               onPressed: () => {_shareLocation()},
               child: Center(
                 child: Text(
-                  'Comparte tu Ubicacion',
+                  'Comparte tu Ubicación',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.023,
                   ),
@@ -286,7 +286,7 @@ class TransporteState extends State<Transporte> {
                   controller: _commentController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Descripcion de tu necesidad',
+                    labelText: 'Descripción de tu necesidad',
                     hintText: 'Escribe tus comentarios aquí...',
                   ),
                   keyboardType: TextInputType.multiline,

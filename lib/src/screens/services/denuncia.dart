@@ -26,7 +26,7 @@ class DenunciaState extends State<Denuncia> {
       _selectedIndex = index;
       // Verifica qué ítem se seleccionó y navega a la pantalla correspondiente
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -145,7 +145,7 @@ class DenunciaState extends State<Denuncia> {
               onPressed: () => {_shareLocation()},
               child: Center(
                 child: Text(
-                  'Comparte tu Ubicacion',
+                  'Comparte tu Ubicación',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.023,
                   ),

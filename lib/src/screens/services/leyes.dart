@@ -17,11 +17,13 @@ class LeyesState extends State<Leyes> {
 
   // Lista de párrafos como cadenas de texto
   final List<String> _paragraphs = [
-    "Artículo 1.- Los principios que inspiran la presente Ley, se fundamentan en los artículos 13, 47, 54 y 68 que la Constitución Nacional reconocen en consideración a al dignidad que le es propia a las personas con limitación en sus derechos fundamentales, económicos, sociales y culturales para su completa realización personal y su total integración social y a las personas con limitaciones severas y profundas, la asistencia y protección necesarias.",
-    "Artículo 2.- El Estado garantizará y velará por que en su ordenamiento jurídico no prevalezca discriminación sobre habitante alguno en su territorio, por circunstancias personales, económicas, físicas, fisiológicas, síquicas, sensoriales y sociales.",
-    "Artículo 3.- El Estado Colombiano inspira esta ley para la normalización social plena y la total integración de las personas con limitación y otras disposiciones legales que se expidan sobre la materia en la Declaración de los Derechos Humanos proclamada por las Naciones Unidas en el año de 1948, en la Declaración de los Derechos del Deficiente Mental aprobada por la ONU el 20 de diciembre de 1971, en la Declaración de los Derechos de las Personas con Limitación, aprobada por la Resolución 3447 de la misma organización, del 9 de diciembre de 1975, en el Convenio 159 de la OIT, en la Declaración de Sund Berg de Torremolinos, Unesco 1981, en la Declaración de las Naciones Unidas concernientes a las personas con limitación de 1983 y en la recomendación 168 de la OIT de 1983. Ver la Ley 762 de 2002",
-    "Artículo 4.- Las ramas del poder público pondrán a disposición todos los recursos necesarios para el ejercicio de los derechos a que se refiere el artículo 1 de la presente ley, siendo obligación ineludible del Estado la prevención, los cuidados médicos y sicológicos, la habilitación y la rehabilitación adecuadas, la educación apropiada, la orientación, la integración laboral, la garantía de los derechos fundamentales económicos, culturales y sociales. \nPara estos efectos estarán obligados a participar para su eficaz realización, la administración central el sector descentralizado, las administraciones departamentales, distritales y municipales, todas las corporaciones públicas y privadas del país.",
-    "Artículo 5.- Las personas con limitación deberán aparecer calificadas como tales en el carné de afiliado al Sistema de Seguridad en Salud, ya sea el régimen contributivo o subsidiado. Para tal efecto las empresas promotoras de salud deberán consignar la existencia de la respectiva limitación en el carné de afiliado, para lo cual solicitarán en el formulario de afiliación la información respectiva y la verificación a través de diagnóstico médico en caso de que dicha limitación no sea evidente. \nDicho carné especificará el carácter de persona con limitación y el grado de limitación moderada, severa o profunda de la persona. Servirá para identificarse como titular de los derechos establecidos en la presente Ley. NOTA: Texto subrayado declarado  EXEQUIBLE mediante Sentencia de la Corte Constitucional C-606 de 2012 El Consejo Nacional de Seguridad Social en Salud realizará las modificaciones necesarias al formulario de afiliación y al carné de los afiliados al Sistema General de Seguridad Social en Salud con el objeto de incorporar las modificaciones aquí señaladas. \nLo dispuesto en este artículo se entiende sin perjuicio de las políticas que con relación a las personas con limitación establezca el 'Comité Consultivo Nacional de las Personas con Limitación' a que se refiere el artículo siguiente."
+    "Ley 361 de 1997:",
+    "La Ley 361 establece los derechos de las personas con discapacidad y promueve su participación activa en la sociedad.",
+    "Accesibilidad Universal:",
+    "Se han implementado medidas para mejorar la accesibilidad en espacios públicos, edificaciones y servicios",
+    "Educación Inclusiva:",
+    "La estrategia 'Educación para Todos' ha avanzado en la integración de estudiantes con discapacidad en entornos educativos regulares."
+
     // Agrega más párrafos según sea necesario
   ];
 
@@ -29,7 +31,7 @@ class LeyesState extends State<Leyes> {
     setState(() {
       _selectedIndex = index;
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -121,7 +123,8 @@ class LeyesState extends State<Leyes> {
 
 Widget buildParagraph(String paragraph, BuildContext context) {
   // Identifica el patrón para hacer en negrita
-  final RegExp regExp = RegExp(r'Artículo \d+\.-');
+  final RegExp regExp = RegExp(
+      r'(Ley 361 de 1997:|Accesibilidad Universal:|Educación Inclusiva:)');
   Iterable<RegExpMatch> matches = regExp.allMatches(paragraph);
 
   List<TextSpan> spans = [];

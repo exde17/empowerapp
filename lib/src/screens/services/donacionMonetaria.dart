@@ -20,7 +20,7 @@ class DonacionesMonetariaState extends State<DonacionesMonetaria> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -87,7 +87,7 @@ class DonacionesMonetariaState extends State<DonacionesMonetaria> {
             width: MediaQuery.of(context).size.width * 0.85,
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Para realizar una donación monetaria solo debes ingresar el valor que desea donar y  el metodo de pago deseado',
+              'Para realizar una donación monetaria solo debes ingresar el valor que desea donar y el método de pago deseado.',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: MediaQuery.of(context).size.height * 0.026,

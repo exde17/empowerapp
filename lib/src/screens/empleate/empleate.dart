@@ -18,7 +18,7 @@ class EmpleateState extends State<Empleate> {
       _selectedIndex = index;
 
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 2) {
         Navigator.pushNamed(context, Routes.homeServices);
@@ -73,7 +73,7 @@ class EmpleateState extends State<Empleate> {
                 width: MediaQuery.of(context).size.width * 0.85,
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'Gracias por el registro de tu perfil, empresas y organizaciones sin ánimo de lucro podrán contactarse contigo para el acceso a un empleo remunerado. Te invitamos a llenar de manera adecuada tu perfil para que tus necesidades se ajusten a lo ofertado',
+                  'Gracias al registro de tu perfil, empresas y organizaciones sin ánimo de lucro podrán contactar contigo para el acceso a un empleo remunerado. \nTe invitamos a llenar de manera adecuada tu perfil para que tus necesidades se ajusten a lo ofertado.',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: MediaQuery.of(context).size.height * 0.026,
@@ -119,25 +119,51 @@ class EmpleateState extends State<Empleate> {
                   ),
                 ),
               ),
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.01,
-              // ),
-              // SizedBox(
-              //   width: MediaQuery.of(context).size.height * 0.4,
-              //   child: ElevatedButton(
-              //     onPressed: () => {
-              //       Navigator.pushNamed(context, Routes.promuevete),
-              //     },
-              //     child: Center(
-              //       child: Text(
-              //         'Promuevéte',
-              //         style: TextStyle(
-              //           fontSize: MediaQuery.of(context).size.height * 0.023,
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Empresas asociadas:',
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height * 0.023,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'lib/assets/babaria.png', // Asegúrate de que la ruta de tu imagen sea correcta
+                    width: MediaQuery.of(context).size.width * 0.14,
+                    height: MediaQuery.of(context).size.height * 0.14,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.03,
+                  ),
+                  Image.asset(
+                    'lib/assets/universidad.png', // Asegúrate de que la ruta de tu imagen sea correcta
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.03,
+                  ),
+                  Image.asset(
+                    'lib/assets/cocacola.png', // Asegúrate de que la ruta de tu imagen sea correcta
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                  ),
+                ],
+              )
             ],
           ),
         )),

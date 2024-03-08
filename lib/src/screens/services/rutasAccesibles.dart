@@ -98,7 +98,7 @@ class RutasAccesiblesState extends State<RutasAccesibles> {
     setState(() {
       _selectedIndex = index;
       if (index == 0) {
-        Navigator.pushNamed(context, Routes.visibilizate);
+        Navigator.pushNamed(context, Routes.menuMuevete);
       }
       if (index == 1) {
         Navigator.pushNamed(context, Routes.empleate);
@@ -204,35 +204,38 @@ class RutasAccesiblesState extends State<RutasAccesibles> {
                         ),
                 ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        _goToRoute(alamedas);
-                      },
-                      child: const Text('Ir a Alamedas'),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.02,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _goToRoute(buenaVista);
-                      },
-                      child: const Text('Ir a BuenaVista'),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.02,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _goToRoute(nuestro);
-                      },
-                      child: const Text('Ir a Nuestro Hogar'),
-                    ),
-                  ],
-                ),
+                SingleChildScrollView(
+                    scrollDirection:
+                        Axis.horizontal, // Permite el desplazamiento horizontal
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            _goToRoute(alamedas);
+                          },
+                          child: const Text('Ir a Alamedas'),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.01,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            _goToRoute(buenaVista);
+                          },
+                          child: const Text('Ir a Buenavista'),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.01,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            _goToRoute(nuestro);
+                          },
+                          child: const Text('Ir a Nuestro Hogar'),
+                        ),
+                      ],
+                    )),
               ],
             ),
           ),
